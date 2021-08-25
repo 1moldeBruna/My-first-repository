@@ -1,0 +1,28 @@
+#include<stdio.h>
+
+/*Um determinado material radioativo perde metade de sua massa a cada 50 segundos. Dada a sua massa
+inicial em Kg, faça um algoritmo que determine o tempo necessário para que essa massa se torne menor
+que 0,5 gramas. Escreva a massa inicial, a massa final e o tempo. */
+int main () {
+
+	float massaI, tempo=0, massaF=0, contador = 0.5;
+	
+
+
+	printf("Informe a massa inicial do elemento radioativo: \n");
+	scanf("%f", &massaI);
+	
+	do{
+
+	massaI = massaI - (massaI / 2);
+	massaF = massaI;
+	
+	tempo = tempo + 50;
+
+	}while(massaI >= contador);
+	
+	printf("A massa final é:%f\n", massaF);
+	printf("O tempo gasto para o processo foi de: %f segundos \n", tempo);
+
+	return 0;
+}

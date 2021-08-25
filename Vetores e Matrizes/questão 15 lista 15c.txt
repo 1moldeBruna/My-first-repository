@@ -1,0 +1,51 @@
+#include <stdio.h>
+
+/*Em uma classe há n alunos, cada um dos quais realizou k provas com pesos distintos. Dados n ,
+k, os pesos das k provas e as notas de cada aluno, calcular a média ponderada das provas para cada
+aluno e a média aritmética da classe em cada uma das provas. */
+int main(void) {
+  
+	int i, n, p, soma_pesos=0;
+	float nota, media_turma=0;
+
+	//coleta de dados gerais
+	printf("Digite o número de estudantes:\n");
+	scanf("%d", &n);
+	printf("\nDigite o número de provas realizadas:\n");
+	scanf("%d", &p);
+  
+	int peso[p];
+	float notas[n], media[n];
+
+	printf("\nDigite o peso de cada prova:\n");
+	
+	for(i=0; i<p; i++){
+    	scanf("%d", &peso[i]);
+	soma_pesos += peso[i]; // realizo a soma dos pesos para calcular a média ponderada depois 
+	}
+
+	for(i=0; i<n; i++){
+	notas[i]=0;  //zerar o vetor notas para não ter problemas depois 
+	}
+
+	//coleta de notas individuais
+	for(i=0; i<n; i++){
+	printf("\nDigite as notas de estudante %d:\n", i+1); // i+1, pois não existe estudante zero
+		for(int j=0; j<p; j++){
+		scanf("%f", &nota);
+		nota = nota*peso[j];
+		notas[i] += nota;
+    	}
+
+	notas[i] = notas[i] / soma_pesos;
+
+	media_turma += notas[i];
+
+	printf("\n\nA média ponderada de estudante %d é: %.2f", i+1, notas[i]);
+  	}
+
+	//apresentação dos resultados
+	printf("\n\nA média da turma é: %.2f", media_turma/n);
+
+  return 0;
+}

@@ -1,0 +1,33 @@
+#include<stdio.h>
+
+//algoritimo que calcula que as horas de uma partida de jogo em 24 horas 
+int main () {
+
+	int horaInicio, horaFim;
+	float horasDoJogo;	
+
+	printf("Insira a hora em que a partida iniciou: ");
+	scanf("%d", &horaInicio);
+
+	printf("Insira a hora em que finalizou a partida: ");
+	scanf("%d", &horaFim);
+
+	//processamento 
+	
+	if(horaFim == horaInicio){
+
+		printf("A partida teve 24horas");
+	}else{
+				if(horaFim > horaInicio){
+
+					horasDoJogo = horaFim - horaInicio;
+					printf("A partida teve:   horas %f", horasDoJogo);
+		                            }
+		}
+						if(horaFim < horaInicio){
+
+							horasDoJogo = 24 - horaInicio + horaFim;
+							printf("A partida teve:   horas %f", horasDoJogo);
+									}
+	return 0;
+}

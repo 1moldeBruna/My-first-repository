@@ -1,0 +1,53 @@
+#include<stdio.h>
+
+/*Escreva um que leia um vetor G de 20 elementos caracter que representa o
+gabarito de uma prova. A seguir, para cada um dos 50 alunos da turma, leia o vetor
+de respostas (R) do aluno e conte o número de acertos. Mostre o nº de acertos do
+aluno e uma mensagem APROVADO, se a nota for maior ou igual a 6; e mostre
+uma mensagem de REPROVADO, caso contrário.*/
+int main () {
+
+	int n=20, m=50, alunos[m];
+	char gab[n], resposta[n];
+
+	//importante zerar o vetor para não obter problemas posteriormente
+	for(int i=0; i<m; i++){
+	alunos[i]=0;
+	}
+
+	//obtenção do gabarito
+	printf("Informe o gabarito da prova: ");
+	for(int i=0; i<n; i++){
+	scanf("\n%c", &gab[i]);
+}
+
+	//obtenção das informações dos alunos
+	for(int i=0; i<m; i++){
+	
+		//gabaritos individuais
+		printf("Informe o gabarito do aluno %d ", i+1);
+		for(int j=0; j<n; j++){
+		scanf("\n%c", &resposta[j]);	
+		}
+	
+		//comparação das respostas com o gabarito 
+		for(int j=0; j<n; j++){
+		if(gab[j]==resposta[j]){
+		alunos[i]++;
+		}
+	}		
+}
+
+	//apresentação dos resultados 
+	for(int i=0; i<m; i++){
+	printf("\n\nAluno %d\n questões certas: %d", i+1, alunos[i]);
+		if("alunos[i]>=3"){
+		printf("\nAPROVAD@");
+			}
+			else{
+				printf("\nREPROVAD@");
+				}
+			}
+
+	return 0;
+}

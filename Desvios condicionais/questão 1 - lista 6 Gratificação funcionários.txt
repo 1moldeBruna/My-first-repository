@@ -1,0 +1,52 @@
+#include <stdio.h>
+
+
+
+//questão 1 lista 6. algoritmo que lê as informações de um funcionário e calcula a sua gratificação
+
+int main () {
+
+	int horasExtras, faltas;
+	float ht;
+
+	printf("Insira o número de horas extras trabalhadas: ");
+
+	scanf("%d", &horasExtras);
+	
+	printf("Qual é o total de horas não trabalhadas? ");
+	
+	scanf("%d", &faltas);
+
+
+	//processamento 
+	ht =  horasExtras - ((2 / 3) * faltas);
+
+	if(ht > 40){
+		printf("Gratificação = 1000 reais");
+
+	}
+		else{
+			if(30 < ht && ht <= 40){			
+				printf("Gratificação = 800 reais");
+			}
+			else{
+				if(20 < ht && ht <= 30){
+					printf("Gratificação = 600 reais");
+				
+				}
+
+				else{
+					if(10 < ht && ht <= 20){
+						printf("Gratificação = 400 reais");
+					}
+
+					else{
+						if(ht <=10){
+							printf("Gratificação = 200 reais");
+							}
+						}
+					}
+				}
+			}
+	return 0;
+}
