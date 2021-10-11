@@ -1,0 +1,27 @@
+#include<stdio.h>
+
+//questão 4 lista6 algoritmo índice de poluição 
+int main () {
+
+	float listaA, listaB, listaC;
+
+	printf("Insira o valor do ídice de poluição da lista A: ");
+	scanf("%f", &listaA);
+
+	printf("Insira o valor do ídice de poluição da lista B: ");
+	scanf("%f", &listaB);
+
+	printf("Insira o valor do ídice de poluição da lista C: ");
+	scanf("%f", &listaC);
+
+	if(listaA>=0.30){
+		printf("As atividades das indústrias da lista A precisam ser suspensas até que o índece de poluição fique abaixo de 0.30");
+			}
+			if(listaB>=0.40){
+				printf("As atividades das indústrias da lista B precisam ser suspensas até que o índece de poluição fique abaixo de 0.40");
+					}
+				if(listaC>=0.50){
+					printf("As atividades das indústrias da lista C precisam ser suspensas até que o índece de poluição fique abaixo de 0.50");
+						}
+	return 0;
+}

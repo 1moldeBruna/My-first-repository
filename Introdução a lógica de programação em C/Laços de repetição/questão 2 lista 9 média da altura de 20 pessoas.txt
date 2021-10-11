@@ -1,0 +1,26 @@
+#include<stdio.h>
+
+/*Faça um algoritmo que lê a altura de 20 pessoas e calcule a média aritmética das alturas*/
+int main () {
+
+	float media, altura, contador=0, soma_alturas=0;
+	
+	while (contador < 20){
+		//repete
+
+	printf("Digite a altura: ");
+	scanf("%f", &altura);	
+
+	soma_alturas = soma_alturas + altura;
+	contador = contador +1;
+
+	}
+
+	//processamento 
+	media = soma_alturas / 20;
+
+	printf("A média  aritmética das alturas é:  %f", media);
+
+		return 0;
+}
+

@@ -1,0 +1,44 @@
+#include<stdio.h>
+
+/* Uma loja de departamentos oferece para seus clientes um determinado desconto de acordo com o valor
+da compra efetuada. O desconto é de 20% caso o valor da compra seja maior que R$ 500,00 e de 15%
+caso seja menor ou igual. Faça um algoritmo que leia, para cada cliente, nome, endereço e valor da compra
+e escreva o total a pagar. Um nome de cliente igual a ÚLTIMO indica o fim da entrada de dados. */
+int main () {
+
+  int cont=1;
+  int codigo_cliente;
+  float valorCompra, total, desconto;
+
+  do{
+    printf("Informe o código do cliente: \n");
+    scanf("%d", &codigo_cliente);
+
+    printf("Informe o valor da sua compra:  \n");
+    scanf("%f", &valorCompra);
+
+  if(valorCompra>500){
+    desconto = (valorCompra * 20/100); 
+    total = valorCompra - desconto; 
+      }
+    else{
+
+      if("valorCompra <500 || valorCompra=500"){
+          desconto = (valorCompra * 15/100);
+           total = valorCompra - desconto; 
+      
+        }
+    }
+
+	printf("O cliente com o código: %d\n", codigo_cliente);
+	printf("Tem o total a pagar de:  %f\n", total);
+	printf("Digite 1 para calcular o desconto do próximo cliente ou 0 para encerrar. %d\n", cont);
+	scanf("%d", &cont);
+	
+	}while(cont == 1);
+	if("cont ==0"){
+		printf("Sessão enerrada");
+		}
+
+    return 0;
+  }
